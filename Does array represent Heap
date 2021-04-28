@@ -1,0 +1,34 @@
+PROBLEM: Given an array A of size N, the task is to check if the given array represents a Binary Max Heap.
+
+Input:  arr[] = {90, 15, 10, 7, 12, 2}
+Output: True
+
+The given array represents below tree
+       90
+     /    \
+   15      10
+  /  \     /
+7    12  2
+The tree follows max-heap property as every node is greater than all of its descendants.
+
+
+
+SOLUTION:
+
+
+int findHeap(int a[], int n){
+        if(n==0) return 0;
+        else{
+            for(int i=0;i<n;i++){
+                if(a[i]<a[(2*i)+1] || a[i]<a[(2*i)+2]){
+                    return 0;
+                }
+            }
+            return 1;
+        }
+    }
+    bool isMaxHeap(int a[], int n)
+    {
+        // Your code goes here
+        findHeap(a,n);
+    }
