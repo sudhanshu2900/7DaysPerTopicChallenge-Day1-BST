@@ -1,0 +1,40 @@
+PROBLEM:
+Given a Binary Search Tree. The task is to find the minimum element in this given BST.
+
+Input:
+           5
+         /    \
+        4      6
+       /        \
+      3          7
+     /
+    1
+    
+Output: 1
+
+
+SOLUTION:
+
+
+void findMinEle(Node *root, int &minEle){
+    if(root==NULL) return;
+    else{
+        if(minEle>(root->data)){
+            minEle=root->data;
+        }
+        findMinEle(root->left, minEle);
+        findMinEle(root->right, minEle);
+    }
+    
+}
+int minValue(Node* root)
+{
+    int minEle=INT_MAX;
+    findMinEle(root, minEle);
+    return minEle;
+}
+
+
+
+
+
